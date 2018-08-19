@@ -1,11 +1,12 @@
-import { Directive, ElementRef, OnInit } from '@angular/core';
+import { Directive, ElementRef, OnInit, Input } from '@angular/core';
 import * as HLS from 'hls.js';
 
 @Directive({
   selector: '[appVideoHls]'
 })
 export class VideoHlsDirective implements OnInit{
-
+  @Input('scr') scr: any;
+  
   private hls : any;
   private element: HTMLVideoElement;
   
@@ -31,7 +32,7 @@ export class VideoHlsDirective implements OnInit{
     if (HLS.isSupported()) {
       
       
-      this.hls.loadSource('https://cflive-emea.live-delivery.ooyala.com/out/u/jb44pwd2tj7w5/111819/wyYXIxZTE6okZbyKLzxq8TXa4a-SQlAO/cs/d77d4356674b449695b1c0f19fbd6fae_6.m3u8');
+      this.hls.loadSource(this.scr);
       this.hls.attachMedia(this.element);
 
       this.hls.on(HLS.Events.MANIFEST_PARSED,function() {
