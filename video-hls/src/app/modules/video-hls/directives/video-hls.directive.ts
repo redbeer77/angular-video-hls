@@ -1,19 +1,22 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Directive, ElementRef, OnInit } from '@angular/core';
 import * as HLS from 'hls.js';
 
-@Component({
-  selector: 'app-video-hls',
-  templateUrl: './video-hls.component.html',
-  styleUrls: ['./video-hls.component.css']
+@Directive({
+  selector: '[appVideoHls]'
 })
-export class VideoHlsComponent implements OnInit {
+export class VideoHlsDirective implements OnInit{
 
-  @ViewChild('videoPlayer') videoplayer: any;
-  public hls : any;
+  private hls : any;
+  private element: HTMLVideoElement;
+  
+  constructor(videoPlayer: ElementRef) { 
+    this.element = videoPlayer.nativeElement;
+    this.element.muted = true;
+    this.element.autoplay = true;
 
-  constructor() { }
+  }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.establishHlsStream();
   }
   establishHlsStream(): void {
@@ -29,10 +32,10 @@ export class VideoHlsComponent implements OnInit {
       
       
       this.hls.loadSource('https://cflive-emea.live-delivery.ooyala.com/out/u/jb44pwd2tj7w5/111819/wyYXIxZTE6okZbyKLzxq8TXa4a-SQlAO/cs/d77d4356674b449695b1c0f19fbd6fae_6.m3u8');
-      this.hls.attachMedia(this.videoplayer.nativeElement);
+      this.hls.attachMedia(this.element);
 
       this.hls.on(HLS.Events.MANIFEST_PARSED,function() {
-        this.videoplayer.nativeElement.play();
+        this.element.play();
     });
     }
   }
