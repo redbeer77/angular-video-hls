@@ -5,8 +5,9 @@ import * as HLS from 'hls.js';
   selector: '[appVideoHls]'
 })
 export class VideoHlsDirective implements OnInit{
-  @Input('scr') scr: any;
   
+  @Input('scr') scr: any;
+
   private hls : any;
   private element: HTMLVideoElement;
   
