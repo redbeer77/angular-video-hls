@@ -1,3 +1,4 @@
+import { VideoHlsService } from './../services/video-hls.service';
 import { Directive, ElementRef, OnInit, Input } from '@angular/core';
 import * as HLS from 'hls.js';
 
@@ -11,14 +12,14 @@ export class VideoHlsDirective implements OnInit{
   private hls : any;
   private element: HTMLVideoElement;
   
-  constructor(videoPlayer: ElementRef) { 
+  constructor(videoPlayer: ElementRef,public _videoService: VideoHlsService) { 
     this.element = videoPlayer.nativeElement;
-    this.element.muted = true;
     this.element.autoplay = true;
 
   }
 
   ngOnInit(): void {
+    this._videoService.setVideoPlayer(this.element)
     this.establishHlsStream();
   }
   establishHlsStream(): void {
