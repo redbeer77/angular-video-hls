@@ -1,7 +1,8 @@
 <div>
   video-controls works!
   <!-- <button (click)="_videoService.volumeUp()">Volumen +</button> -->
-  <input type="range" min="0" max="10" value="10" (change)="_videoService.changeVolume($event)">
+  <input #ramSelector type="range" min="0" max="10" value="10"  [(ngModel)]="volume"  (change)="_videoService.changeVolume(ramSelector.value)">
   <button (click)="_videoService.muteVolume()" >Muted</button>
-  <!-- <button (click)="_videoService.fullScreen()" >FullScreen</button> -->
+   <button (click)="_videoService.fullScreen()" >FullScreen</button>
+   
 </div>

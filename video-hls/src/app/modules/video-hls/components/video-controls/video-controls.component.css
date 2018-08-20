@@ -1,5 +1,6 @@
 div{
-    background: red;
+    position: relative;
+    margin-top: -39px;
+    background: rgba(65, 65, 65, 0.55);
     min-height: 35px;
-    top: 10000;
 }

@@ -1,4 +1,4 @@
-import { VideoHlsService } from './../../services/video-hls.service';
+import { VideoHlsService } from '../../services/video-hls.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./video-controls.component.css']
 })
 export class VideoControlsComponent implements OnInit {
-
+  volume:number;
   constructor(public _videoService:VideoHlsService) { }
 
   ngOnInit() {
