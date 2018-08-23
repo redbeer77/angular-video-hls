@@ -15,6 +15,8 @@ export class VideoHlsDirective implements OnInit{
   constructor(videoPlayer: ElementRef,public _videoService: VideoHlsService) { 
     this.element = videoPlayer.nativeElement;
     this.element.autoplay = true;
+    this.element.muted = true;
+    this.element.volume = 0.5;
   }
 
   ngOnInit(): void {

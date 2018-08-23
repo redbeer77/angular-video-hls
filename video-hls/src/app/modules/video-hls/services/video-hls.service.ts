@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class VideoHlsService {
-  private videoElement: HTMLVideoElement;
+  public videoElement: HTMLVideoElement;
   constructor() { }
 
   setVideoPlayer(item:HTMLVideoElement){
@@ -18,6 +18,8 @@ export class VideoHlsService {
     this.videoElement.volume =((( this.videoElement.volume * 100) - 10) / 100 )
   }
   fullScreen(){
-    this.videoElement.webkitEnterFullScreen()
+    if (this.videoElement.webkitEnterFullScreen) {
+      this.videoElement.webkitEnterFullScreen()
+    }
   }
 }
