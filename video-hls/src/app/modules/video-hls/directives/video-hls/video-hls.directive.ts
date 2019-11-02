@@ -1,11 +1,11 @@
 import { VideoHlsService } from '../../services/video-hls.service';
-import { Directive, ElementRef, OnInit, Input } from '@angular/core';
+import { Directive, ElementRef, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import * as HLS from 'hls.js';
 
 @Directive({
   selector: '[appVideoHls]'
 })
-export class VideoHlsDirective implements OnInit{
+export class VideoHlsDirective implements OnInit,OnChanges{
   
   @Input('scr') scr: any;
 
@@ -23,6 +23,12 @@ export class VideoHlsDirective implements OnInit{
     this._videoService.setVideoPlayer(this.element)
     this.establishHlsStream();
   }
+  ngOnChanges(changes: SimpleChanges){
+    if(changes.scr){
+      console.log("on change")
+      this.establishHlsStream();
+    }
+  }
   establishHlsStream(): void {
     if (this.hls) {
       this.hls.destroy();
@@ -33,11 +39,16 @@ export class VideoHlsDirective implements OnInit{
     });
 
     if (HLS.isSupported()) {
-      this.hls.loadSource(this.scr);
-      this.hls.attachMedia(this.element);
-      this.hls.on(HLS.Events.MANIFEST_PARSED,function() {
-        this.element.play();
-    });
+  
+      if (this.scr){
+        this.hls.loadSource(this.scr);
+        this.hls.attachMedia(this.element);
+  
+        this.hls.on(HLS.Events.MANIFEST_PARSED,function() {
+          this.element.play();
+      });
+      }
+    
     }
   }
 

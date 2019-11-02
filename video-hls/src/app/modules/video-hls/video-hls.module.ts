@@ -6,17 +6,23 @@ import { VideoControlsComponent } from './components/video-controls/video-contro
 import { VideoHlsService } from './services/video-hls.service';
 import { FormsModule }   from '@angular/forms';
 import { ShowcontrolsDirective } from './directives/showcontrols/showcontrols.directive';
+import { ChannelsComponent } from './components/channels/channels.component';
+
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   declarations: [
     VideoHlsComponent,
     VideoHlsDirective,
     VideoControlsComponent,
-    ShowcontrolsDirective
+    ShowcontrolsDirective,
+    ChannelsComponent,    
+   
   ],
   exports:[
     VideoHlsComponent

@@ -12,4 +12,8 @@ export class VideoHlsComponent  {
 
   constructor() { }
 
+  public setUrl(url:string){
+    // debugger;
+    this.url = url;
+  }
 }

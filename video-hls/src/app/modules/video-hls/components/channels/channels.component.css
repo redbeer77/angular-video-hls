@@ -1,0 +1,24 @@
+div{
+    position: absolute;
+    background: rgba(65, 65, 65, 0.55);
+    max-height: 92vh;
+    max-width: 109px;
+    width: 100%;
+    opacity: 0; 
+    z-index: 1;
+    overflow-y: auto;
+
+}
+
+div:hover{
+    opacity: 1;
+}
+
+ul{
+    margin-bottom: 0rem;
+    margin: 0px;
+    padding-left: 1rem;
+}
+ul li{
+    list-style-type: none;
+}

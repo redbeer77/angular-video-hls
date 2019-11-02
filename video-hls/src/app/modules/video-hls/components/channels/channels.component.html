@@ -1,0 +1,24 @@
+<div>
+  <!-- <button (click)="_videoService.volumeUp()">Volumen +</button> -->
+  <!-- <input >
+  <button  ></button>
+   <button  ></button> -->
+   <ul class="pagination" style="margin-bottom: 0rem;">
+    <li  *ngFor="let channel of channels | async" (click)="toSew(channel)"  class="page-item"><a class="page-link" href="#"> <img [src]="channel.logo"  width="60px" [title]="channel.name" (click)="toSew(channel)">
+  
+      <!-- <ng-container *ngIf="isSelected(channel)">
+          <app-video-hls  [url]="channel.options[0].url"></app-video-hls> 
+       </ng-container> -->
+      </a></li>
+  </ul>
+   
+</div>
+<!-- <div class="navegador">
+  <nav aria-label="Page navigation example">
+          <ul class="pagination" style="margin-bottom: 0rem;">
+            <li  *ngFor="let channel of channels | async" (click)="toSew(channel)"  class="page-item"><a class="page-link" href="#"> <img [src]="channel.logo"  width="60px" [title]="channel.name" (click)="toSew(channel)">
+
+              </a></li>
+          </ul>
+        </nav>
+      </div> -->
