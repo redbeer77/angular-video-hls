@@ -43,6 +43,8 @@ export class ChannelsComponent implements OnInit {
     this.channel =  channel.options[0].url;
     this.channelSelected = channel.options[0].url
     this.channelSel.emit(channel.options[0].url)
+    this.channService.setImage(channel);
+  
     //  this.channelSel.emit(channel.options[0].url)
    
   }

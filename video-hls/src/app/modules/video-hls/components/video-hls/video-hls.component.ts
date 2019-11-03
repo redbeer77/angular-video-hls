@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { VideoHlsService } from '../../services/video-hls.service';
 
 
 @Component({
@@ -10,7 +11,7 @@ export class VideoHlsComponent  {
 
 @Input('url') url:string;
 
-  constructor() { }
+  constructor(public _videoService:VideoHlsService) { }
 
   public setUrl(url:string){
     // debugger;

@@ -1,7 +1,13 @@
-<div>
+<div [ngStyle]="{ opacity: _videoService.opacity }" (mouseenter)="_videoService.opacity=1" (mouseleave) ="_videoService.opacity=0">
   <!-- <button (click)="_videoService.volumeUp()">Volumen +</button> -->
-  <input style="float: right;" #ramSelector type="range" min="0" max="10" value="10"  [(ngModel)]="volume"  (change)="_videoService.changeVolume(ramSelector.value)">
+  <button style="float: right;" (click)="_videoService.fullScreen()" >FullScreen</button>
   <button style="float: right;" (click)="_videoService.muteVolume()" >{{_videoService.videoElement.muted ? 'Sound':'Mute'}}</button>
-   <button style="float: right;" (click)="_videoService.fullScreen()" >FullScreen</button>
+  <input style="float: right;" #ramSelector type="range" min="0" max="10" value="10"  [(ngModel)]="volume"  (change)="_videoService.changeVolume(ramSelector.value)">
+ 
+  
+   <img class="logo-channel" *ngIf="_videoService.chanToSew" [src]="_videoService.getImage()">
    
+</div>
+<div  (mouseenter)="_videoService.opacity=0" (mouseleave) ="_videoService.opacity=1" [ngStyle]="{ opacity: _videoService.opacity }" class="pointer-zone">
+  Pointer Zone
 </div>

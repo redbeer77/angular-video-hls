@@ -9,6 +9,8 @@ export class VideoHlsService {
   public channelsToMenu: channels[];
   public ambitsToSel:string[]=[];
   private allAmbits: any[];
+  public chanToSew:channels = {};
+  public opacity:number = 0;
 
   constructor(private http:HttpClient) { }
 
@@ -23,6 +25,13 @@ export class VideoHlsService {
   }
   volumeDown(){
     this.videoElement.volume =((( this.videoElement.volume * 100) - 10) / 100 )
+  }
+   getImage():string{
+     return this.chanToSew.logo || '';
+   }
+  setImage(channSelected:channels){
+    this.chanToSew = channSelected
+    // this.videoElement.volume =((( this.videoElement.volume * 100) - 10) / 100 )
   }
   fullScreen(){
     if (this.videoElement.webkitEnterFullScreen) {

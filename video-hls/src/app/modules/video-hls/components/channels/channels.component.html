@@ -1,4 +1,4 @@
-<div>
+<div [ngStyle]="{ opacity: channService.opacity }" (mouseenter)="channService.opacity=1" (mouseleave) ="channService.opacity=0">
   <!-- <button (click)="_videoService.volumeUp()">Volumen +</button> -->
   <!-- <input >
   <button  ></button>

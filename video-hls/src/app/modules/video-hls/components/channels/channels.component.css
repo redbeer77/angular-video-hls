@@ -24,4 +24,6 @@ ul li{
 }
 select{
     width: 91px;
+    margin-top:1rem ;
+    margin-bottom:1rem ;
 }

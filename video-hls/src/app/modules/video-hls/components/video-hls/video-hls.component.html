@@ -1,3 +1,3 @@
 <app-channels (channelSel)="setUrl($event)"></app-channels>
-<video appVideoHls [scr]="url"> </video>
+<video (mouseenter)="_videoService.opacity=1" (mouseleave) ="_videoService.opacity=0" appVideoHls [scr]="url"> </video>
 <app-video-controls></app-video-controls>
