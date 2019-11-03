@@ -1,7 +1,7 @@
 <div>
   <!-- <button (click)="_videoService.volumeUp()">Volumen +</button> -->
-  <input #ramSelector type="range" min="0" max="10" value="10"  [(ngModel)]="volume"  (change)="_videoService.changeVolume(ramSelector.value)">
-  <button (click)="_videoService.muteVolume()" >{{_videoService.videoElement.muted ? 'Sound':'Mute'}}</button>
-   <button (click)="_videoService.fullScreen()" >FullScreen</button>
+  <input style="float: right;" #ramSelector type="range" min="0" max="10" value="10"  [(ngModel)]="volume"  (change)="_videoService.changeVolume(ramSelector.value)">
+  <button style="float: right;" (click)="_videoService.muteVolume()" >{{_videoService.videoElement.muted ? 'Sound':'Mute'}}</button>
+   <button style="float: right;" (click)="_videoService.fullScreen()" >FullScreen</button>
    
 </div>

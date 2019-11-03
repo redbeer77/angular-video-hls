@@ -25,7 +25,7 @@ export class VideoHlsDirective implements OnInit,OnChanges{
   }
   ngOnChanges(changes: SimpleChanges){
     if(changes.scr){
-      console.log("on change")
+      // console.log("on change")
       this.establishHlsStream();
     }
   }

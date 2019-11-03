@@ -3,6 +3,10 @@
   <!-- <input >
   <button  ></button>
    <button  ></button> -->
+   <select  (change)="onAmbitChange($event.target.value)" >
+    <option  *ngFor="let ambit of ambitsToSel">{{ambit}}</option>
+  </select>
+
    <ul class="pagination" style="margin-bottom: 0rem;">
     <li  *ngFor="let channel of channels | async" (click)="toSew(channel)"  class="page-item"><a class="page-link" href="#"> <img [src]="channel.logo"  width="60px" [title]="channel.name" (click)="toSew(channel)">
   
