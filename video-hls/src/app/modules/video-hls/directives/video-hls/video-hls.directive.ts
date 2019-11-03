@@ -15,7 +15,7 @@ export class VideoHlsDirective implements OnInit,OnChanges{
   constructor(videoPlayer: ElementRef,public _videoService: VideoHlsService) { 
     this.element = videoPlayer.nativeElement;
     this.element.autoplay = true;
-    this.element.muted = true;
+    this.element.muted = false;
     this.element.volume = 0.5;
   }
 

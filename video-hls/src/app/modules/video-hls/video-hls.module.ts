@@ -9,19 +9,23 @@ import { ShowcontrolsDirective } from './directives/showcontrols/showcontrols.di
 import { ChannelsComponent } from './components/channels/channels.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { WindowComponent } from './components/window/window.component';
+import { PortalModule } from '@angular/cdk/portal';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    PortalModule
   ],
   declarations: [
     VideoHlsComponent,
     VideoHlsDirective,
     VideoControlsComponent,
     ShowcontrolsDirective,
-    ChannelsComponent,    
+    ChannelsComponent,
+    WindowComponent
    
   ],
   exports:[

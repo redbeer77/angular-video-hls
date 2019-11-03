@@ -1,3 +1,7 @@
 <app-channels (channelSel)="setUrl($event)"></app-channels>
 <video (mouseenter)="_videoService.opacity=1" (mouseleave) ="_videoService.opacity=0" appVideoHls [scr]="url"> </video>
+<window *ngIf="_videoService.showPortal">
+        <button (click)="_videoService.showPortal = false">Close me!</button>
+       <video appVideoHls [scr]="this._videoService.url"> </video> 
+</window>
 <app-video-controls></app-video-controls>

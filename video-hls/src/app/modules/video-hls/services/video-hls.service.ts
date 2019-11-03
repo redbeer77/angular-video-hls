@@ -11,6 +11,8 @@ export class VideoHlsService {
   private allAmbits: any[];
   public chanToSew:channels = {};
   public opacity:number = 0;
+  public showPortal:boolean = false;
+  public url:string;
 
   constructor(private http:HttpClient) { }
 
@@ -31,6 +33,7 @@ export class VideoHlsService {
    }
   setImage(channSelected:channels){
     this.chanToSew = channSelected
+    // this.url= channSelected.options[0].url
     // this.videoElement.volume =((( this.videoElement.volume * 100) - 10) / 100 )
   }
   fullScreen(){

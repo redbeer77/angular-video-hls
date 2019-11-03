@@ -1,7 +1,7 @@
 import { VideoHlsService } from '../../services/video-hls.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { channels } from './models/channel.model';
-import {} from '../../../../../assets/'
+
 @Component({
   selector: 'app-channels',
   templateUrl: './channels.component.html',
@@ -37,6 +37,7 @@ export class ChannelsComponent implements OnInit {
 
   }
   toSew(channel:channels){
+    debugger;
     // console.log(channel)
     // debugger;
     // this.urlView = channel.options[0].url
