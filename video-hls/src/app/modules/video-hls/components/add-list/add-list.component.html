@@ -1,0 +1,35 @@
+ <div class="add-list">
+<form [formGroup]="addList" (ngSubmit)="onSubmit()">
+  
+  <label>
+    Nombre de la Lista:
+    <input type="text" value="MyList" formControlName="nombreLista" disabled>
+  </label>
+<br>
+<div formGroupName="canal">
+  <h3>Canal</h3>
+
+  <label>
+    nombre:
+    <input type="text" formControlName="nombre">
+  </label>
+
+  <label>
+    url:
+    <input type="text" formControlName="url">
+  </label>
+  
+  <label>
+    imagen:
+    <input type="text" formControlName="imagen">
+  </label>
+  <button type="submit" (click)="addChannel()">Añadir</button>
+</div>
+
+
+  <button type="submit" >Submit</button>
+</form>
+<div  style="color: white;" *ngFor="let item of channelsToAdd">
+{{item | json }}
+</div>
+</div>

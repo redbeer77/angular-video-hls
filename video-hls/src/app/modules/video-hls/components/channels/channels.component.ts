@@ -56,6 +56,22 @@ export class ChannelsComponent implements OnInit {
 
   }
   onAmbitChange(event:string){
-    this.channels = this.channService.filterChannels(event)
+    switch(event) { 
+      // case "+ Crear Lista": { 
+      //   this.channService.showAddList = true;
+      //    break; 
+      // } 
+      // case "MyList": { 
+      //    //statements; 
+      //    this.channels = this.channService.getMyPrivateList()
+      //    break; 
+      // } 
+      default: { 
+        this.channels = this.channService.filterChannels(event)
+         break; 
+      } 
+   } 
+
+  
   }
 }

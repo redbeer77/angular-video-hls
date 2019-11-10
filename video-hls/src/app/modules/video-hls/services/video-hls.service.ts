@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { channels } from '../components/channels/models/channel.model';
-import { send } from 'q';
+
 @Injectable()
 export class VideoHlsService {
+
+
   public videoElement: HTMLVideoElement;
   public urlChannels: string = 'http://91.121.64.179/tdt_project/output/channels.json';
   public channelsToMenu: channels[];
@@ -13,6 +15,8 @@ export class VideoHlsService {
   public opacity:number = 0;
   public showPortal:boolean = false;
   public url:string;
+  public showAddList:boolean = false;
+  public myPrivateList:channels[]=[];
 
   constructor(private http:HttpClient) { }
 
@@ -53,6 +57,9 @@ export class VideoHlsService {
       return a.name;
     })
 
+    //no imlpementado 
+    // this.ambitsToSel.push("+ Crear Lista")
+
     this.allAmbits =spainChannels.ambits;
     let generalistas = ambitos[0].channels;
     this.channelsToMenu = generalistas;
@@ -72,5 +79,14 @@ export class VideoHlsService {
     let send = this.allAmbits.filter( a=> a.name === ambit)
     return send[0].channels;
   }
-
+  saveList(nombreLista: string,channelsToAdd:channels[]) {
+    this.ambitsToSel.push(nombreLista)
+    this.myPrivateList = channelsToAdd;
+    // throw new Error("Method not implemented.");
+    // console.log(value)
+  }
+ 
+  public async getMyPrivateList():Promise<channels[]>{
+    return  this.myPrivateList
+  }
 }

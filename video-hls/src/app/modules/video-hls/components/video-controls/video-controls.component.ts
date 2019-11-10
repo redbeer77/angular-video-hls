@@ -13,7 +13,7 @@ export class VideoControlsComponent implements OnInit {
   ngOnInit() {
   }
   openVideoinWindow(){
-    debugger;
+    // debugger;
     this._videoService.showPortal = true;
      this._videoService.url = this._videoService.chanToSew.options[0].url
   }
