@@ -1,8 +1,9 @@
 div{
+    text-align: center;
     position: absolute;
     background: rgba(65, 65, 65, 0.55);
     max-height: 92vh;
-    max-width: 109px;
+    /* max-width: 109px; */
     width: 100%;
     opacity: 0; 
     z-index: 1;
@@ -17,13 +18,16 @@ div:hover{
 ul{
     margin-bottom: 0rem;
     margin: 0px;
+    margin-top: 50px;
     padding-left: 1rem;
 }
 ul li{
     list-style-type: none;
+    margin: 4px;
 }
 select{
-    width: 91px;
+    position: fixed;
+    /* width: 91px; */
     margin-top:1rem ;
     margin-bottom:1rem ;
 }

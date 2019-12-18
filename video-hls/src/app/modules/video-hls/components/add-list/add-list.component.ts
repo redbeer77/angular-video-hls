@@ -37,7 +37,7 @@ export class AddListComponent implements OnInit {
 
   }
   addChannel(){
-    debugger;
+    // debugger;
     this.channelsToAdd.push(this.addList.value.canal)
 
     this.addList.patchValue({

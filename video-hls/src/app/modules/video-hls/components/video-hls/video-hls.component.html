@@ -1,5 +1,10 @@
 <app-channels (channelSel)="setUrl($event)"></app-channels>
 <video (mouseenter)="_videoService.opacity=1" (mouseleave) ="_videoService.opacity=0" appVideoHls [scr]="url"> </video>
+<div *ngIf="!url">
+              <h1>TDT España</h1>
+       <h3>Selecciona un canal</h3>
+      <label>Pasa el ratón por encima</label>
+</div>
 <window *ngIf="_videoService.showPortal">
         <button (click)="_videoService.showPortal = false">Close me!</button>
        <video appVideoHls [scr]="this._videoService.url"> </video> 
